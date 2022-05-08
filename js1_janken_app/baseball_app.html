@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+<title>JSスタジアム</title>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header>
+  <div class="header_title">
+    <img src="./img/yankee_studium.jpeg" alt="stadium">
+    <h1 class="title">JSスタジアム</h1>
+  </div>
+</header>
+
+<main>
+
+<!-- イントロ（対戦するピッチャーを選ぶ） -->
+<div class="intro">
+  <h2 class="intro_title">今日の先発ピッチャーは誰？</h2>
+  <button id="pitch_btn">ピッチャールーレット</button>
+  <div class="pitcher">
+    <img id="default_pitch" src="./img/hatena.jpeg" alt="default">
+  </div>
+</div>
+
+<!-- 対戦（狙い打つコースを選ぶ） -->
+  <div class="taisen">
+    <h2 class="taisen_title">どのゾーンを狙う？</h2>
+    <br>
+    <h2 class="instruction">ストライクゾーン</h2>
+    <!-- ストラックアウト（高め、真ん中、低めを３行で表示-->
+  <ul class="high">
+    <li id="high_left">1</li>
+    <li id="high_mid">2</li>
+    <li id="high_right">3</li>
+  </ul>
+  <ul class="mid">
+    <li id="mid_left">4</li>
+    <li id="mid_mid">5</li>
+    <li id="mid_right">6</li>
+  </ul> 
+  <ul class="low">
+    <li id="low_left">7</li>
+    <li id="low_mid">8</li>
+    <li id="low_right">9</li>
+  </ul>
+  <!-- 対戦結果表示 -->
+  <div class="taisen_result"> 
+    <h2 class="result_1">ピッチャーが投げたゾーンは？</h2>
+     <div class="result_inner">
+        <img class="homebase" src="./img/homebase.png" alt="homebase">
+        <span id="pc_hands">どこ？</span>
+     </div>
+    <div id="judgement">対戦結果</div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <small class="copyrights">
+    copyrights 2022 MIL THIRD #16 All Rights Reserved.
+   </small>
+</footer>
+
+<!-- Java Script -->
+
+<script>
+
+// ピッチャー選定
+// ルーレットボタンがクリックされたら、ランダムに3人のピッチャーに画像が切り替わる。
+// （切り替え方は「https://into-the-program.com/attr-img-src/」こちらのリンク参照
+$('#pitch_btn').on('click',function () {
+  let num = Math.ceil(Math.random()*3)
+  console.log(num);
+  if(num ==1){
+    $('#default_pitch').attr('src','./img/p1.roki.sasaki.png')
+  }
+  else if(num ==2){
+    $('#default_pitch').attr('src','./img/p2.kodai.senga.png')
+  }
+  else{
+    $('#default_pitch').attr('src','./img/p3.yoshinobu.yamamoto.png')
+  }
+})
+
+// ボタンが押されたら、投球開始
+
+// 高め左
+$('#high_left').on('click',function (){
+  // 1~9のランダムな数字を表示する
+let num = Math.ceil(Math.random()*9)
+console.log(num);
+
+if (num ==1){
+    $('#pc_hands').text("1")  
+    $('#judgement').text('ホームラン！！')
+  }else if (num ==2){
+    $('#pc_hands').text("2")  
+    $('#judgement').text('ヒット')
+  }else if (num ==3){
+    $('#pc_hands').text("3")  
+    $('#judgement').text('空振り')
+  }else if (num ==4){
+    $('#pc_hands').text("4")  
+    $('#judgement').text('ヒット')
+  }else if (num ==5){
+    $('#pc_hands').text("5")  
+    $('#judgement').text('ヒット')
+  }else if (num ==6){
+    $('#pc_hands').text("6")  
+    $('#judgement').text('空振り')
+  }else if (num ==7){
+    $('#pc_hands').text("7")  
+    $('#judgement').text('空振り')
+  }else if (num ==8){
+    $('#pc_hands').text("8")  
+    $('#judgement').text('空振り')
+  }else {
+    $('#pc_hands').text("9")  
+    $('#judgement').text('空振り')
+  }
+})
+
+// 高め真ん中
+$('#high_mid').on('click',function (){
+  // 1~9のランダムな数字を表示する
+let num = Math.ceil(Math.random()*9)
+console.log(num);
+
+if (num ==1){
+    $('#pc_hands').text("1")  
+    $('#judgement').text('ヒット')
+  }else if (num ==2){
+    $('#pc_hands').text("2")  
+    $('#judgement').text('ホームラン！！')
+  }else if (num ==3){
+    $('#pc_hands').text("3")  
+    $('#judgement').text('ヒット')
+  }else if (num ==4){
+    $('#pc_hands').text("4")  
+    $('#judgement').text('空振り')
+  }else if (num ==5){
+    $('#pc_hands').text("5")  
+    $('#judgement').text('ヒット')
+  }else if (num ==6){
+    $('#pc_hands').text("6")  
+    $('#judgement').text('空振り')
+  }else if (num ==7){
+    $('#pc_hands').text("7")  
+    $('#judgement').text('空振り')
+  }else if (num ==8){
+    $('#pc_hands').text("8")  
+    $('#judgement').text('空振り')
+  }else {
+    $('#pc_hands').text("9")  
+    $('#judgement').text('空振り')
+  }
+})
+// 高め右
+$('#high_right').on('click',function (){
+  // 1~9のランダムな数字を表示する
+let num = Math.ceil(Math.random()*9)
+console.log(num);
+
+if (num ==1){
+    $('#pc_hands').text("1")  
+    $('#judgement').text('空振り')
+  }else if (num ==2){
+    $('#pc_hands').text("2")  
+    $('#judgement').text('ヒット')
+  }else if (num ==3){
+    $('#pc_hands').text("3")  
+    $('#judgement').text('ホームラン！！')
+  }else if (num ==4){
+    $('#pc_hands').text("4")  
+    $('#judgement').text('空振り')
+  }else if (num ==5){
+    $('#pc_hands').text("5")  
+    $('#judgement').text('ヒット')
+  }else if (num ==6){
+    $('#pc_hands').text("6")  
+    $('#judgement').text('ヒット')
+  }else if (num ==7){
+    $('#pc_hands').text("7")  
+    $('#judgement').text('空振り')
+  }else if (num ==8){
+    $('#pc_hands').text("8")  
+    $('#judgement').text('空振り')
+  }else {
+    $('#pc_hands').text("9")  
+    $('#judgement').text('空振り')
+  }
+})
+
+//真ん中左
+$('#mid_left').on('click',function (){
+  // 1~9のランダムな数字を表示する
+let num = Math.ceil(Math.random()*9)
+console.log(num);
+
+if (num ==1){
+    $('#pc_hands').text("1")  
+    $('#judgement').text('ヒット')
+  }else if (num ==2){
+    $('#pc_hands').text("2")  
+    $('#judgement').text('空振り')
+  }else if (num ==3){
+    $('#pc_hands').text("3")  
+    $('#judgement').text('空振り')
+  }else if (num ==4){
+    $('#pc_hands').text("4")  
+    $('#judgement').text('ホームラン！！')
+  }else if (num ==5){
+    $('#pc_hands').text("5")  
+    $('#judgement').text('ヒット')
+  }else if (num ==6){
+    $('#pc_hands').text("6")  
+    $('#judgement').text('空振り')
+  }else if (num ==7){
+    $('#pc_hands').text("7")  
+    $('#judgement').text('ヒット')
+  }else if (num ==8){
+    $('#pc_hands').text("8")  
+    $('#judgement').text('空振り')
+  }else {
+    $('#pc_hands').text("9")  
+    $('#judgement').text('空振り')
+  }
+})
+//ど真ん中
+$('#mid_mid').on('click',function (){
+  // 1~9のランダムな数字を表示する
+let num = Math.ceil(Math.random()*9)
+console.log(num);
+
+if (num ==1){
+    $('#pc_hands').text("1")  
+    $('#judgement').text('空振り')
+  }else if (num ==2){
+    $('#pc_hands').text("2")  
+    $('#judgement').text('ヒット')
+  }else if (num ==3){
+    $('#pc_hands').text("3")  
+    $('#judgement').text('空振り')
+  }else if (num ==4){
+    $('#pc_hands').text("4")  
+    $('#judgement').text('ヒット')
+  }else if (num ==5){
+    $('#pc_hands').text("5")  
+    $('#judgement').text('ホームラン！！')
+  }else if (num ==6){
+    $('#pc_hands').text("6")  
+    $('#judgement').text('ヒット')
+  }else if (num ==7){
+    $('#pc_hands').text("7")  
+    $('#judgement').text('空振り')
+  }else if (num ==8){
+    $('#pc_hands').text("8")  
+    $('#judgement').text('ヒット')
+  }else {
+    $('#pc_hands').text("9")  
+    $('#judgement').text('空振り')
+  }
+})
+//真ん中右
+$('#mid_right').on('click',function (){
+  // 1~9のランダムな数字を表示する
+let num = Math.ceil(Math.random()*9)
+console.log(num);
+
+if (num ==1){
+    $('#pc_hands').text("1")  
+    $('#judgement').text('空振り')
+  }else if (num ==2){
+    $('#pc_hands').text("2")  
+    $('#judgement').text('空振り')
+  }else if (num ==3){
+    $('#pc_hands').text("3")  
+    $('#judgement').text('ヒット')
+  }else if (num ==4){
+    $('#pc_hands').text("4")  
+    $('#judgement').text('空振り')
+  }else if (num ==5){
+    $('#pc_hands').text("5")  
+    $('#judgement').text('ヒット')
+  }else if (num ==6){
+    $('#pc_hands').text("6")  
+    $('#judgement').text('ホームラン！！')
+  }else if (num ==7){
+    $('#pc_hands').text("7")  
+    $('#judgement').text('空振り')
+  }else if (num ==8){
+    $('#pc_hands').text("8")  
+    $('#judgement').text('空振り')
+  }else {
+    $('#pc_hands').text("9")  
+    $('#judgement').text('ヒット')
+  }
+})
+
+// 低め左
+$('#low_left').on('click',function (){
+  // 1~9のランダムな数字を表示する
+let num = Math.ceil(Math.random()*9)
+console.log(num);
+
+if (num ==1){
+    $('#pc_hands').text("1")  
+    $('#judgement').text('空振り')
+  }else if (num ==2){
+    $('#pc_hands').text("2")  
+    $('#judgement').text('空振り')
+  }else if (num ==3){
+    $('#pc_hands').text("3")  
+    $('#judgement').text('空振り')
+  }else if (num ==4){
+    $('#pc_hands').text("4")  
+    $('#judgement').text('ヒット')
+  }else if (num ==5){
+    $('#pc_hands').text("5")  
+    $('#judgement').text('ヒット')
+  }else if (num ==6){
+    $('#pc_hands').text("6")  
+    $('#judgement').text('空振り')
+  }else if (num ==7){
+    $('#pc_hands').text("7")  
+    $('#judgement').text('ホームラン！！')
+  }else if (num ==8){
+    $('#pc_hands').text("8")  
+    $('#judgement').text('ヒット')
+  }else {
+    $('#pc_hands').text("9")  
+    $('#judgement').text('空振り')
+  }
+})
+
+// 低め真ん中
+$('#low_mid').on('click',function (){
+  // 1~9のランダムな数字を表示する
+let num = Math.ceil(Math.random()*9)
+console.log(num);
+
+if (num ==1){
+    $('#pc_hands').text("1")  
+    $('#judgement').text('空振り')
+  }else if (num ==2){
+    $('#pc_hands').text("2")  
+    $('#judgement').text('空振り')
+  }else if (num ==3){
+    $('#pc_hands').text("3")  
+    $('#judgement').text('空振り')
+  }else if (num ==4){
+    $('#pc_hands').text("4")  
+    $('#judgement').text('空振り')
+  }else if (num ==5){
+    $('#pc_hands').text("5")  
+    $('#judgement').text('ヒット')
+  }else if (num ==6){
+    $('#pc_hands').text("6")  
+    $('#judgement').text('空振り')
+  }else if (num ==7){
+    $('#pc_hands').text("7")  
+    $('#judgement').text('ヒット')
+  }else if (num ==8){
+    $('#pc_hands').text("8")  
+    $('#judgement').text('ホームラン！！')
+  }else {
+    $('#pc_hands').text("9")  
+    $('#judgement').text('ヒット')
+  }
+})
+
+// 低め右
+$('#low_right').on('click',function (){
+  // 1~9のランダムな数字を表示する
+let num = Math.ceil(Math.random()*9)
+console.log(num);
+
+if (num ==1){
+    $('#pc_hands').text("1")  
+    $('#judgement').text('空振り')
+  }else if (num ==2){
+    $('#pc_hands').text("2")  
+    $('#judgement').text('空振り')
+  }else if (num ==3){
+    $('#pc_hands').text("3")  
+    $('#judgement').text('空振り')
+  }else if (num ==4){
+    $('#pc_hands').text("4")  
+    $('#judgement').text('空振り')
+  }else if (num ==5){
+    $('#pc_hands').text("5")  
+    $('#judgement').text('ヒット')
+  }else if (num ==6){
+    $('#pc_hands').text("6")  
+    $('#judgement').text('ヒット')
+  }else if (num ==7){
+    $('#pc_hands').text("7")  
+    $('#judgement').text('空振り')
+  }else if (num ==8){
+    $('#pc_hands').text("8")  
+    $('#judgement').text('ヒット')
+  }else {
+    $('#pc_hands').text("9")  
+    $('#judgement').text('ホームラン！！')
+  }
+})
+
+</script>
+</body>
+</html>

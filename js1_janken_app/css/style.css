@@ -1,0 +1,168 @@
+
+/* ページ全体 */
+body{
+    margin:0;
+    padding:0;
+    text-align:left;
+    font-size: 32px;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* ヘッダー */
+header{
+    align-items: center;
+    font-weight: bold;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    color: whitesmoke;
+    -webkit-text-stroke: 1px black;
+    text-stroke: 1px black;
+}
+.header_title{
+    position: relative;
+    height: 240px;
+    background-color: #d7dfe2;
+    margin: 15px 10px;
+    padding: auto;
+}
+.title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 40px;
+    transform: translate3d(-50%, -50%, 0);
+    font-weight: bold;
+    font-size: 3.6rem;
+    width: 100%;
+    text-align: center;
+}
+
+main{
+    border-bottom:1px solid #ccc;
+}
+/* イントロ */
+.intro{
+    padding: 60px 0 0;
+}
+.intro_title{
+    display: block;
+    margin: 0 25% 20px 25%;
+    padding: 15px 0;
+}
+#pitch_btn{
+    display: block;
+    width: 300px;
+    margin:auto;
+    padding: 21px 0;
+    background-color: #26b430;
+    color: #fff;
+    font-size: 25px;
+    text-align: center;
+    border: none;
+}
+#pitch_btn:hover{
+    background-color: #a3e1a7;
+}
+.pitcher{
+    text-align: center;
+    padding-top: 30px;
+}
+#default_pitch{
+    text-align: center;
+    padding: 30px auto 30px auto;
+}
+/* 対戦 */
+.taisen{
+    background-color: rgb(184, 172, 166);
+    padding: 0 0 60px 0;
+}
+.taisen_title{
+    display: block;
+    margin: 20px 25% 20px 25%;
+    padding: 20px 0;
+}
+.instruction{
+    text-align: center;
+    padding: 15px 0 15px 0;
+}
+/* 対戦結果 */
+.result_1{
+    display: block;
+    margin: 0 25% 0 25%;
+    padding: 20px 0;
+    font-size: 25px;
+}
+.result_inner{
+    position: relative;
+    text-align: center;
+    padding: 0 0 15px 0;
+}
+.homebase{
+    margin: auto;
+}
+#pc_hands{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    color: black;
+    font-weight: bold;
+    font-size: 32px;
+    width: 100%;
+    text-align: center;
+}
+#judgement{
+    padding: 25px;
+    width: 450px;
+    text-align: center;
+    background-color: #26b430;
+    color: #FFF;
+    margin:auto;
+
+}
+
+/* ストラックアウト */
+p{
+    font-size:200%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    height:200px;
+}
+ul{
+    padding: 0;
+    border-top: 1px solid #000000;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    margin: auto;
+}
+li{
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    list-style-type:none;
+    border: 1px solid #666;
+    background-color: #FFF;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+li:hover{
+    background: #cc3300;
+    color:#fff;
+}
+
+/* フッター */
+footer{
+    border-bottom:1px solid #ccc;
+    text-align: center;
+    font-size: 16px;
+    background-color: #707070;
+    padding: 30px;
+}
+.copyrights{
+    color: #fff;
+}
